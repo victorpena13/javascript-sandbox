@@ -20,3 +20,9 @@ while (i < 10) {
 //while loop iteration #10
 //if variable i is changed to a number
 //that is equal or greater then 10. the loop will not run
+
+var a = 10;
+while (a<10) {
+    console.log('while loop iteration' + a);
+    a++;
+}
