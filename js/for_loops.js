@@ -42,13 +42,40 @@ for(var a = 1; a < 11; a++) {
 // 88888888
 // 999999999
 
-for(var b = 1; b < 11; b++) {
+for(var b = 1; b < 10; b++) {
     var output = ' ';
 
     for(var c = 1; c <=b; c++) {
         output += b;
     }
     console.log(output);
+}
+
+// Create a for loop that uses console.log to create
+// the output shown below:
+// 100
+// 95
+// 90
+// 85
+// 80
+// 75
+// 70
+// 65
+// 60
+// 55
+// 50
+// 45
+// 40
+// 35
+// 30
+// 25
+// 20
+// 15
+// 10
+// 5
+
+for(var d = 100; d>=5; d-=5){
+    console.log(d);
 }
 
 
