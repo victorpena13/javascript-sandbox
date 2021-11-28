@@ -26,3 +26,38 @@ while (a<10) {
     console.log('while loop iteration' + a);
     a++;
 }
+
+//for loops:
+
+for (var b = 0; b < 10; b++) {
+    console.log('for loop iteration # ' + b);
+}
+
+for(var c = 0, d = 9; c < 10; c++, d--) {
+    console.log('for loop iteration #' + c + ', d = ' + d);
+}
+
+//break and continue:
+//sometimes a condition independent of the loop condition will occur
+//that gives reason to exit the loop.  the 'break' keyword allows you to exit the loop at any time.
+
+var numberToStopAt = 5;
+
+for (var e = 1; e < 100; e++) {
+    console.log('loop counter is: ' + e);
+
+    if (e === numberToStopAt) {
+        console.log('we have reached the stopping point: break!');
+        break;
+        // console.log('anything after the break will never be seen');
+    }
+}
+
+// the above example will output the following:
+// loop counter is: 1
+// loop counter is: 2
+// loop counter is: 3
+// loop counter is: 4
+// loop counter is: 5
+// we have reached the stopping point: break!
+
