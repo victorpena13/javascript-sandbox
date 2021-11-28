@@ -61,5 +61,13 @@ for (var e = 1; e < 100; e++) {
 // loop counter is: 5
 // we have reached the stopping point: break!
 
+//continuing the next iteration of a loop:
 
+for (var g = 1; g < 100; g++) {
+    if (g % 2 !== 0) {
+        continue;
+    }
+    console.log('Here is an even number: ' + g);
+}
 
+//the out would display even numbers between 1 and 100.
