@@ -29,3 +29,30 @@ for(var a = 1; a < 11; a++) {
         console.log('the number ' + randomInt + ' is odd');
     }
 }
+
+// Create a for loop that uses console.log to create
+// the output shown below:
+// 1
+// 22
+// 333
+// 4444
+// 55555
+// 666666
+// 7777777
+// 88888888
+// 999999999
+
+for(var b = 1; b < 11; b++) {
+    var output = ' ';
+
+    for(var c = 1; c <=b; c++) {
+        output += b;
+    }
+    console.log(output);
+}
+
+
+
+
+
+
