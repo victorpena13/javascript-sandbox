@@ -13,14 +13,6 @@ function showMultiplicationTable(number) {
 showMultiplicationTable(10);
 
 
-
-
-
-
-
-
-
-
 // use a for loop and this snippet of code:
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -30,12 +22,12 @@ function getRandomInt(min, max) {
 // to generate ten random numbers between 20 and 200 and
 // output to the console whether each number is odd or even.
 
-for(var a = 1; a < 11; a++) {
-    var randomInt = getRandomInt(20,200);
-    if (randomInt % 2 === 0) {
-        console.log('the number ' + randomInt + ' is even');
+for(var a = 1; a <=10; a++) {
+    var randomNumber = getRandomInt(20, 200);
+    if (randomNumber % 2 === 0) {
+        console.log("the " + randomNumber + " is even");
     } else {
-        console.log('the number ' + randomInt + ' is odd');
+        console.log("the " + randomNumber + " is odd");
     }
 }
 
