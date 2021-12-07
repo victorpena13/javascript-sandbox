@@ -5,12 +5,21 @@
 // 1 through 10)
 
 function showMultiplicationTable(number) {
-    for(var i = 1; i < 11; i++) {
-        console.log(i + ' * ' + number + " = " + (i*number));
+    for(var i = 1; i <= 10; i++) {
+        console.log(i + " x " + number + " = " + (i*number));
     }
 }
 
-console.log(showMultiplicationTable(10));
+showMultiplicationTable(10);
+
+
+
+
+
+
+
+
+
 
 // use a for loop and this snippet of code:
 function getRandomInt(min, max) {
