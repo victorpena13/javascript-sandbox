@@ -43,14 +43,20 @@ for(var a = 1; a <=10; a++) {
 // 88888888
 // 999999999
 
-for(var b = 1; b < 10; b++) {
-    var output = ' ';
+//the first for loop intializes the count 1 -9;
+//in order to create a number with multiples of its own value we have to save each out put of the loop in a string.
+// and  a loop inside of the first loop that is less then or equal to the first loops value
+// each loop will be logged to the output and then console.log.
 
-    for(var c = 1; c <=b; c++) {
+
+for(var b = 1; b <= 9; b++) {
+    var output = " "
+    for (var c = 1; c <= b; c++) {
         output += b;
     }
     console.log(output);
 }
+
 
 // Create a for loop that uses console.log to create
 // the output shown below:
@@ -75,8 +81,8 @@ for(var b = 1; b < 10; b++) {
 // 10
 // 5
 
-for(var d = 100; d>=5; d-=5){
-    console.log(d);
+for(var d = 100; d >=0; d-=5) {
+    console.log(d)
 }
 
 
