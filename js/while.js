@@ -51,4 +51,9 @@ var bought = Math.floor(Math.random() * 5) + 1;
 do {
     console.log("total cones " + allCones + " - " + bought)
     console.log(allCones -= bought);
+    if(allCones == 0) {
+        console.log("yay! all cones are sold!");
+        break;
+    }
+
 }while (allCones > 0);
