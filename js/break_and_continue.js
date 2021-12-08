@@ -8,7 +8,6 @@
                 continue;
             }
             console.log(i);
-
         }
     }
     do {
@@ -16,7 +15,6 @@
         if(userInput < 50 && userInput > 1) {
             console.log(oddNumber(userInput));
         }
-
 
     } while (userInput > 50 || userInput < 1 || isNaN(parseInt(userInput)));
 })()
