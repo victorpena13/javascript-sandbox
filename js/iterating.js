@@ -67,7 +67,7 @@
     }
 
     function thirdIteration(array) {
-        return array[2])
+        return array[2];
     }
 
     function fourthIteration(array) {
