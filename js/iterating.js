@@ -59,19 +59,19 @@
      */
 
     function firstIteration(array) {
-        console.log(array[0]);
+        return array[0];
     }
 
     function secondIteration(array) {
-        console.log(array[1]);
+        return array[1];
     }
 
     function thirdIteration(array) {
-        console.log(array[2]);
+        return array[2])
     }
 
     function fourthIteration(array) {
-        console.log(array[3]);
+    return array[3];
     }
 
     console.log(firstIteration(names));
