@@ -55,6 +55,27 @@
      *  > first([1, 2, 3, 4, 5]) // returns 1
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
+
      */
 
+    function firstIteration(array) {
+        console.log(array[0]);
+    }
+
+    function secondIteration(array) {
+        console.log(array[1]);
+    }
+
+    function thirdIteration(array) {
+        console.log(array[2]);
+    }
+
+    function fourthIteration(array) {
+        console.log(array[3]);
+    }
+
+    console.log(firstIteration(names));
+    console.log(secondIteration(names));
+    console.log(thirdIteration(names));
+    console.log(fourthIteration(names));
 })();
