@@ -11,6 +11,7 @@
         'Uranus',
         'Neptune'
     ];
+    console.log(planets);
 
     /**
      * TODO:
@@ -31,10 +32,12 @@
     console.log(planets.pop());
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
+    var earthIndex = planets.indexOf('Earth');
+    console.log("Earth's Index is " + earthIndex);
 
     console.log("Reversing the order of the planets array.");
-    console.log(planets);
+    console.log(planets.reverse());
 
     console.log("Sorting the planets array.");
-    console.log(planets);
+    console.log(planets.sort());
 })();
