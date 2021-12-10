@@ -55,13 +55,10 @@
     shoppers.forEach(function(shopper){
 
         if (shopper.amount >= 200) {
-            console.log("You get a discount " + shopper.name );
-            console.log("Amount: " + shopper.amount);
-            console.log("Price after discount " + (shopper.amount - .12*shopper.amount))
+            console.log("You get a discount " + shopper.name + "Amount: " + shopper.amount + "Price after discount " + (shopper.amount - .12*shopper.amount));
         } else {
             console.log(shopper.name + " you don't get a discount");
         }
-;
     });
 
     /** TODO:
@@ -76,6 +73,35 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var poetry = [
+        {
+            title: "Violet Bent Backwards Over the Grass",
+            author: {
+                firstName: "Lana",
+                lastName: "Del Rey"
+            }
+        },
+        {
+            title: "Eloisa to abelard",
+            author: {
+                firstName: "Alexander",
+                lastName: "Pope"
+            }
+        },
+        {
+            title: "The Cat in the Hat",
+            author: {
+                firstName: "Dr. Seuss",
+            }
+        }
+    ];
+    console.log("do you like " + poetry[2].name);
+    console.log("He has a book called " + poetry[2].title);
+
+
+
+
 
     /**
      * TODO:
@@ -101,6 +127,14 @@
      *      ---
      *      ...
      */
+
+    poetry.forEach(function (poet){
+        console.log("Poem number: " + (poetry.indexOf(poet) + 1));
+        console.log("Title: " + poet.title);
+        console.log("Author: " + poet.author.firstName + " " + poet.author.lastName);
+    })
+
+
 
     /**
      * Bonus:
