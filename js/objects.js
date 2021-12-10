@@ -134,8 +134,6 @@
         console.log("Author: " + poet.author.firstName + " " + poet.author.lastName);
     })
 
-
-
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -146,5 +144,22 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createPoetry(title, firstname, lastname) {
+        var poem = [
+            {
+                title: title,
+                author: {
+                    firstname: firstname,
+                    lastname: lastname
+                }
+            }
+        ]
+        poetry.push(poem);
+    }
+
+    createPoetry("one", "two", "three");
+    console.log(poetry);
+
 
 })();
