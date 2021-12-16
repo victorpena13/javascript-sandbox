@@ -12,8 +12,8 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
     var person = {};
-    console.log(person.firstName = "victor");
-    console.log(person.lastName = "pena");
+    person.firstName = "victor";
+    person.lastName = "pena";
 
     console.log(person);
     console.log(person.firstName);
