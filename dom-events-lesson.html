@@ -5,6 +5,8 @@
 </head>
 <body>
 <button id="btn1">Click Me!</button>
+<button id="btn2">Remove Event Listener</button>
+
 <script>
     'use strict';
 
@@ -12,7 +14,16 @@
     var listener = function () {
         alert('You clicked the button!');
     }
-    document.getElementById('btn1').addEventListener('click', listener);
+    var btn1 = document.getElementById('btn1').addEventListener('click', listener);
+
+    var remover = function() {
+        btn1.removeEventListener('click', listener);
+        console.log('even listener removed');
+    }
+
+    var btn2 = document.getElementById('btn2');
+    btn2.addEventListener('click', remover);
+
 </script>
 </body>
 </html>
