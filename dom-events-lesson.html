@@ -4,8 +4,15 @@
     <title></title>
 </head>
 <body>
+<button id="btn1">Click Me!</button>
 <script>
+    'use strict';
 
+    //crate a handler function
+    var listener = function () {
+        alert('You clicked the button!');
+    }
+    document.getElementById('btn1').addEventListener('click', listener);
 </script>
 </body>
 </html>
