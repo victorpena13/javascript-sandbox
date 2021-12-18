@@ -99,10 +99,6 @@
     console.log("do you like " + poetry[2].name);
     console.log("He has a book called " + poetry[2].title);
 
-
-
-
-
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -160,6 +156,4 @@
 
     createPoetry("one", "two", "three");
     console.log(poetry);
-
-
 })();
