@@ -28,3 +28,10 @@ const displayCharacters = (characters) => {
 };
 
 loadCharacters();
+
+
+//codeForSearchBar:
+let searchBar = document.getElementById('searchBar');
+searchBar.addEventListener('keyup', function (e){
+    console.log(e);
+});
