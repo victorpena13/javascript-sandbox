@@ -1,29 +1,25 @@
-// const myTodos = ['Buy Bread', 'Go to Gym', 'Record youtube vidoes'];
+const myTodos = ['Buy Bread', 'Go to Gym', 'Record youtube videos'];
 
-// console.log(myTodos.indexOf('Buy Bread'));
+console.log(myTodos.indexOf('Buy Bread'));
+
 
 const newTodos = [{
     title: 'Buy Bread',
-    isDone: false,
+    isDone: false
 }, {
     title: 'Go to Gym',
-    isDone: false,
+    isDone: false
 }, {
     title: 'Record youtube videos',
-    isDone: false,
+    isDone: false
 }]
 
-// const index = newTodos.findIndex(function(todo, index){
-//     console.log(todo + " " + index);
-//     return todo.title === 'Go to Gym'; todo.title === 'Go to Gym';
-// });
+//findIndex will iterate through the newTodos array of objects and return the indice of 'Go to Gym';
+const index = newTodos.findIndex(function(todo,index) {
+    console.log(todo + " " + index)
+    return todo.title === 'Go to Gym';
+})
 
-const findTodo = function(myTodos, title) {
-    const index = myTodos.findIndex(function(todo, index){
-        return todo.title.toLowerCase() === title.toLowerCase();
-    });
-    return myTodos[index]
-}
-
-let printMe = findTodo(newTodos, 'Go To Gym');
-console.log(printMe);
+console.log(index);
+//will result in the details of the object index;
+console.log(newTodos[index]);
