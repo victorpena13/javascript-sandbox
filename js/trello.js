@@ -30,7 +30,7 @@ console.log(newTodos[index]);
 
 const findTodoMethodOne = function(myTodos, title) {
     const index = myTodos.findIndex(function (todo, index) {
-        return todo.title.toLowerCase() === title.toLowerCase()
+        return todo.title.toLowerCase() === title;
     });
     return myTodos[index];
 }
@@ -47,3 +47,20 @@ const findTodoMethodTwo = function(myTodos, title) {
 
 let printMethodTwo = findTodoMethodOne(newTodos, 'Go to Gym');
 console.log(printMethodTwo);
+
+let searchBar = document.getElementById('searchBar');
+
+searchBar.addEventListener('keyup', function (e) {
+    const searchString = e.target.value;
+    const filteredCoffees = newTodos.filter( todo => {
+        return todo.title.contains(searchString);
+    });
+    return filteredCoffees;
+});
+
+
+
+
+
+
+
