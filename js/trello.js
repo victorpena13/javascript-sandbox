@@ -28,35 +28,42 @@ console.log(newTodos[index]);
 
 // refactored code from lines 20-23 into a function to accept a title object array list to return the index:
 
+
+
+let printMe = findTodoMethodOne(newTodos, 'Record youtube videos');
+console.log(printMe);
+
+
+let searchBar = document.getElementById('searchBar');
+
+searchBar.addEventListener('keyup', function (e) {
+    var value = e.target.value;
+
+    var data = searchTable(value, newTodos)
+
+});
+
+function searchTable(val, data) {
+    var filteredData = [];
+
+    for(var i = 0; i < data.length; i++) {
+        value = val.toLowerCase();
+        var name = data[i].title.toLowerCase();
+
+        if(name.includes(value)){
+            filteredData.push(data[i]);
+        }
+    }
+    return filteredData;
+}
+
 const findTodoMethodOne = function(myTodos, title) {
     const index = myTodos.findIndex(function (todo, index) {
         return todo.title.toLowerCase() === title;
     });
     return myTodos[index];
 }
-
-let printMe = findTodoMethodOne(newTodos, 'Record youtube videos');
-console.log(printMe);
-
-const findTodoMethodTwo = function(myTodos, title) {
-    const titleReturned = myTodos.find(function(todo, index){
-        return todo.title.toLowerCase() === title.toLowerCase();
-    });
-    return titleReturned;
-}
-
-let printMethodTwo = findTodoMethodOne(newTodos, 'Go to Gym');
-console.log(printMethodTwo);
-
-let searchBar = document.getElementById('searchBar');
-
-searchBar.addEventListener('keyup', function (e) {
-    const searchString = e.target.value;
-    const filteredCoffees = newTodos.filter( todo => {
-        return todo.title.contains(searchString);
-    });
-    return filteredCoffees;
-});
+findTodoMethodOne(myTodos)
 
 
 
