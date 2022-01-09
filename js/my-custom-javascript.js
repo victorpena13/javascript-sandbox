@@ -1,13 +1,6 @@
 var contents = $('#headline-title').html();
 alert(contents);
 
-// $('h1').click(function(){
-//     $(this).css('background-color', '#f0f0f0');
-// });
-
-
-
-
 $('p').dblclick(function(){
     $(this).css('font-size', '18px');
 });
