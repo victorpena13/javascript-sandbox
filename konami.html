@@ -9,12 +9,14 @@
 <script src="/js/jquery.js"></script>
 <script>
     "use strict";
+    var keyCode = {38 : 'up', 40 : 'down', 39 : 'right', 37 : 'left', 66 : 'b', 65 : 'a'};
+    var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+
     $(document).keyup(function(event){
         console.log(event.keyCode);
 
 
     });
-
 </script>
 </body>
 </html>
