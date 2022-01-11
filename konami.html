@@ -6,17 +6,25 @@
 <body>
 <h1>Konami Code</h1>
 
-<script src="/js/jquery.js"></script>
+<script src="js/jquery.js"></script>
 <script>
-    "use strict";
-    var keyCode = {38 : 'up', 40 : 'down', 39 : 'right', 37 : 'left', 66 : 'b', 65 : 'a'};
-    var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+    (function() {
+        "use strict";
+        var keyCode = {38 : 'up', 40 : 'down', 39 : 'right', 37 : 'left', 66 : 'b', 65 : 'a'};
+        var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
+        var userinput = $(document).keyup(function(event){
+            return event.keyCode;
+        });
+        var count = 0;
+        var interval = 1000;
+        var updateTimer = setInterval(function () {
+            count++;
+            console.log(count);
+        }, interval);
 
-
-    });
+        updateTimer;
+    })();
 </script>
 </body>
 </html>
