@@ -10,20 +10,19 @@
 <script>
     (function() {
         "use strict";
-        var keyCode = {38 : 'up', 40 : 'down', 39 : 'right', 37 : 'left', 66 : 'b', 65 : 'a'};
+        var allowedKeys = {38 : 'up', 40 : 'down', 39 : 'right', 37 : 'left', 66 : 'b', 65 : 'a'};
         var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
-        var userinput = $(document).keyup(function(event){
-            return event.keyCode;
-        });
-        var count = 0;
-        var interval = 1000;
-        var updateTimer = setInterval(function () {
-            count++;
-            console.log(count);
-        }, interval);
+        function activateCheat(){
+            $('body').css('background-color', "orange");
+        }
+        var codePosition = 0;
+        $('body').keydown(function(e){
+            var userInput = allowedKeys[e.keyCode];
+            console.log(userInput);
 
-        updateTimer;
+        });
+
     })();
 </script>
 </body>
