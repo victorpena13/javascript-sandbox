@@ -4,4 +4,7 @@ $('#change-color').click(function (){
     });
 });
 
+$('h3').click(function (){
+    $('ul').children().css('font-weight', 'bold');
+})
 
