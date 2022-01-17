@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <style>
+        :root{
+            --last-li-color: #f00;
+        }
+    </style>
 </head>
 <body>
 <!--Under the FAQ, add 3 unordered lists like above.
@@ -10,8 +14,29 @@ Each list should contain a national park name in an h3 element, and a ul of 4 fa
 <!--When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.-->
 <!--When any list item is clicked, first li of the parent ul should have a font color of blue.-->
 <h1>FAQ</h1>
-
-
+<button id="change-color" type="button">Color Change</button>
+<h3>4 Facts About Big Bend National Park</h3>
+<ul id="big-bend-facts" class="national-park-facts">
+    <li>Big Bend National Park covers a total area of 801,163 acres</li>
+    <li>The number of people visiting Big Bend in 2019 was 463,832</li>
+    <li>Big Bend was made a national park on June 20, 1935</li>
+    <li>The lowest elevation found in Big Bend is 1,715 feet at the Rio Grande River</li>
+</ul>
+<h3>4 Facts About Guadalupe Mountains National Park</h3>
+<ul id="guadalupe-mountains-facts" class="national-park-facts">
+    <li>Guadalupe Mountains National Park covers a total area of 86,416 acres</li>
+    <li>The number of people visiting Guadalupe Mountains in 2019 was 188,833</li>
+    <li>Guadalupe Mountains was made a national park on October 15, 1966</li>
+    <li>The lowest elevation found in Guadalupe Mountains is 3,636 feet near Williams Road</li>
+</ul>
+<h3>4 Facts About Yosemite National Park</h3>
+<ul id="padre-island-facts" class="national-park-facts">
+    <li>The park’s diverse landscape supports more than 400 species.</li>
+    <li>Yosemite is home to one of the tallest waterfalls in the world. </li>
+    <li>Yosemite sees almost 3/4 of its visitors in six months.</li>
+    <li>Yosemite is the only national park to bid to host the winter Olympics.</li>
+</ul>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery_faq.js"></script>
 </body>
 </html>
