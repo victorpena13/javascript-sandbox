@@ -5,16 +5,22 @@
 
 
 var testArray = [true, false, false, true, false];
+var testArrayTwo = [false, false, false, false];
+var testArrayThree = [];
 
-var count = 0;
+
 function countTrue(array) {
+    var count = 0;
     array.forEach(function(element){
-    if (element == true) {
-         return count++;
-    }
+        if (element == true) {
+            count++;
+        }
     });
+    return count;
 }
-countTrue(testArray);
-console.log(count);
 
-countTrue(testArray);
+console.log(countTrue(testArray));;
+console.log(countTrue(testArrayTwo));;
+console.log(countTrue(testArrayThree));;
+
+
