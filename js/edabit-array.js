@@ -4,4 +4,17 @@
 // countTrue([]) ➞ 0
 
 
+var testArray = [true, false, false, true, false];
 
+var count = 0;
+function countTrue(array) {
+    array.forEach(function(element){
+    if (element == true) {
+         return count++;
+    }
+    });
+}
+countTrue(testArray);
+console.log(count);
+
+countTrue(testArray);
