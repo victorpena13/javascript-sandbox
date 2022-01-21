@@ -19,8 +19,25 @@ function countTrue(array) {
     return count;
 }
 
-console.log(countTrue(testArray));;
-console.log(countTrue(testArrayTwo));;
-console.log(countTrue(testArrayThree));;
+// console.log(countTrue(testArray));
+// console.log(countTrue(testArrayTwo));
+// console.log(countTrue(testArrayThree));
 
+// Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
 
+var numbers = [1, 2, 3, 4, 5];
+var numberList = [2334454, 5];
+var num = [1];
+
+function minMax(array) {
+    var minMaxArr = [];
+    var sortedArr = array.sort((a, b) => a-b);
+    var secIndex = sortedArr.pop();
+    var firstIndex = sortedArr.shift();
+    minMaxArr.push(firstIndex, secIndex);
+    return minMaxArr;
+}
+
+minMax(numbers);
+minMax(numberList);
+minMax(num);
