@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .centered{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello World</h1>
+<h1>Hello JavaScript</h1>
+<h1>Hello JQuery</h1>
+<button id="btn1" type="button">click</button>
+<button id="btn2" type="button">remove centered h1</button>
+<script src="js/jquery.js"></script>
+<script>
+
+    $(document).ready(function(){
+        var highlightedStyles = {
+            'color' : 'red',
+            'font-size' : '28ps'
+        };
+        $('h1').css(highlightedStyles).addClass('centered');
+        $('#btn2').click(function(event) {
+            event.preventDefault();
+            ('h1').removeClass('centered');
+        });
+    })
+
+    $('h1').click(function(){
+        alert($(this).html());
+    });
+
+    $('#btn1').click(function (){
+       $(this).html('coding rocks');
+    });
+
+    var elementWidth = $('h1').css('width');
+    console.log(elementWidth);
+
+    $('#btn1').css('width', elementWidth).css('background-color', 'papayawhip');
+
+</script>
+</body>
+</html>
