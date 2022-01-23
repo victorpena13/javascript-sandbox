@@ -75,11 +75,11 @@ console.log(addUp(4));
 // matchHouses(87) ➞ 436
 
 //my notes:
-// 1 house = 6 matchsticks
-// 6 matchsticks * 2 houses - 1 = 11;
-// 6 matchsticks * 3 houses - 2 = 16;
-// 6 matchsticks * 4 houses - 3 = 21;
-// 6 matchsticks * 87 houses - 86 = 436;
+// 1 houses = 6 matchsticks * 1 houses - 0 houses = 6
+// 2 houses = 6 matchsticks * 2 houses - 1 houses = 11;
+// 3 houses = 6 matchsticks * 3 houses - 2 houses = 16;
+// 4 houses = 6 matchsticks * 4 houses - 3 houses = 21;
+// 87 houses = 6 matchsticks * 87 houses - 86 houses = 436;
 
 function matchHouses(step) {
     if (step == 0) {
