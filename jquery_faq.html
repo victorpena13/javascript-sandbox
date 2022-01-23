@@ -8,6 +8,12 @@
         .selected {
             background-color: aquamarine;
         }
+        .shadowbox {
+            width: 15em;
+            border: 1px solid #333;
+            box-shadow: 8px 8px 5px #444;
+            padding: 8px 12px;
+        }
     </style>
 </head>
 <body>
@@ -71,10 +77,15 @@ Each list should contain a national park name in an h3 element, and a ul of 4 fa
 <ul id="padre-island-facts" class="national-park-facts">
     <li>The park’s diverse landscape supports more than 400 species.</li>
     <li>Yosemite is home to one of the tallest waterfalls in the world. </li>
-    <li>Yosemite sees almost 3/4 of its visitors in six months.</li>
+    <li class="third-item">Yosemite sees almost 3/4 of its visitors in six months.</li>
     <li>Yosemite is the only national park to bid to host the winter Olympics.</li>
 </ul>
 
+<h3>Bonus</h3>
+<img id="image1" src="img/mutant-ape-2.png" alt="mutant bored ape yacht club">
+<img id="image2" src="img/mutant_ape.png" alt="mutant bored ape yacht club">
+<img id="image3" src="img/thumb.cms_-1024x768.jpg" alt="mutant bored ape yacht club">
+<button id="shuffle-button" type="button">Shuffle</button>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
