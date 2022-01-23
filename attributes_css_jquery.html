@@ -2,7 +2,8 @@
 <html>
 <head>
     <style>
-        .centered{
+        .selected {
+            color: #0000FF;
             text-align: center;
         }
     </style>
@@ -17,11 +18,10 @@
 <script>
 
     $(document).ready(function(){
-        var highlightedStyles = {
+        var highLightedStyles = {
             'color' : 'red',
             'font-size' : '28ps'
         };
-        $('h1').css(highlightedStyles).addClass('centered');
         $('#btn2').click(function(event) {
             event.preventDefault();
             ('h1').removeClass('centered');
@@ -29,6 +29,8 @@
     })
 
     $('h1').click(function(){
+        $("h1").removeClass('selected');
+        $(this).addClass("selected");
         alert($(this).html());
     });
 

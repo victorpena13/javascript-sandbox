@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        .visibility {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
+<!--In a HTML structure, create a definition list containing 8 FAQs about national parks.-->
+<!--Add a class to all dd elements named invisible.-->
+<!--Create some CSS rules that sets elements with the invisible class to visibility: hidden;.-->
+<!--Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.-->
 <!--Under the FAQ, add 3 unordered lists like above.
 Each list should contain a national park name in an h3 element, and a ul of 4 facts about the park.-->
 <!--Create a button that, when clicked, makes the last li in each ul have a yellow background.-->
@@ -10,31 +19,32 @@ Each list should contain a national park name in an h3 element, and a ul of 4 fa
 <!--When any list item is clicked, first li of the parent ul should have a font color of blue.-->
 
 <h1>8 FAQ's About National parks</h1>
+<button id="render-facts" type="button" >display answers</button>
 <dl>
     <dt>Who is the director of the National Park Service?</dt>
-    <dd>Charles F. "Chuck" Sams III is the Director of the National Park Service.</dd>
+    <dd class="invisible">Charles F. "Chuck" Sams III is the Director of the National Park Service.</dd>
 
     <dt>What government agency oversees the National Park Service?<dt>
-    <dd>The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and Parks.</dd>
+    <dd class="invisible">The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and Parks.</dd>
 
     <dt>How many employees are in the National Park Service?</dt>
-    <dd>Permanent, temporary, and seasonal employees: Approximately 20,000</dd>
+    <dd class="invisible">Permanent, temporary, and seasonal employees: Approximately 20,000</dd>
 
     <dt>How old is the National Park System?</dt>
-    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. </dd>
+    <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. </dd>
 
     <dt>What is the origin of the National Park Service arrowhead?<dt>
-    <dd>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951. The components of the arrowhead may have been inspired by key attributes of the National Park System, with the sequoia tree and bison representing vegetation and wildlife, the mountains and water representing scenic and recreational values, and the arrowhead itself representing historical and archeological values. </dd>
+    <dd class="invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951. The components of the arrowhead may have been inspired by key attributes of the National Park System, with the sequoia tree and bison representing vegetation and wildlife, the mountains and water representing scenic and recreational values, and the arrowhead itself representing historical and archeological values. </dd>
 
     <dt>How many areas are in the National Park System?</dt>
-    <dd>The system includes 423 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments, battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation areas, scenic rivers and trails, and the White House. </dd>
+    <dd class="invisible">The system includes 423 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments, battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation areas, scenic rivers and trails, and the White House. </dd>
 
     <dt>What is the largest national park site? Smallest?</dt>
-    <dd>Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres<br>
+    <dd class="invisible">Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres<br>
         Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
 
     <dt>How many people visit the national parks?<dt>
-    <dd>Total recreation visitors to the national parks in 2019: 327,516,619.</dd>
+    <dd class="invisible">Total recreation visitors to the national parks in 2019: 327,516,619.</dd>
 </dl>
 
 <h1>FAQ</h1>
