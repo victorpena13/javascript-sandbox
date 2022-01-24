@@ -30,16 +30,12 @@ $('li').click(function (){
 
 //bonus:
 
+$('img').click(function (){
 
-var nextElementSibling = image1.nextElementSibling.getAttribute('src');
-var image2nextElementSibling = image2.nextElementSibling.getAttribute('src');
-$(function(){
-    $('#shuffle-button').on('click', function (){
-        $('#image1').attr('src', nextElementSibling);
-        $('#image2').attr('src', image2nextElementSibling)
-        $('#image3').attr('src', 'img/mutant-ape-2.png')
-    })
-})
+    var selectedImage = $(this).attr('src');
+    $('#image1').attr('src', selectedImage);
+});
+
 
 
 
