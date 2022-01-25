@@ -10,9 +10,16 @@
 <script>
     (function() {
         $.ajax("data/blog.json").done(function (data){
+            var htmlString = '';
             data.forEach(function (blog){
-                console.log(blog.title);;
+                htmlString += '<tr>';
+                htmlString +=  '<td>' + blog.title + '</td>';
+                htmlString += '<td>' + blog.content + '</td>';
+                // htmlString += '<td>' + data[i].price + '</td>'
+                // htmlString += '<td>' + data[i].categories + '</td>'
+                htmlString += '</tr>';
             });
+            $('#posts').html(htmlString);
         });
     })();
 
