@@ -20,13 +20,13 @@
         center: [-98.4916, 29.4252],
         zoom: 13,// starting zoom
     });
-
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
         accessToken: mapboxgl.accessToken, // Set the access token
         mapboxgl: mapboxgl, // Set the mapbox-gl instance
         marker: true // Do not use the default marker style
     });
+
     geocoder.on('result', (event) => {
         var userInput = event.result.place_name;
         var location =
@@ -34,10 +34,10 @@
                 name : userInput,
                 address : userInput
         }
-
         restaurants.push(location);
-        for (var i = 0; i < restaurants.length; i++)
-        placeMarkerAndPopup(restaurants[i], mapboxAPI_key, map);
+        for (var i = 0; i < restaurants.length; i++) {
+            placeMarkerAndPopup(restaurants[i], mapboxAPI_key, map);
+        }
     });
 
 // Add the geocoder to the map
