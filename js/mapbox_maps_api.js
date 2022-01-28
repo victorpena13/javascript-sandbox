@@ -12,7 +12,7 @@
             name : "Alemeda Cafe",
             address : "342 W Houston St, San Antonio, TX 78205",
         },
-]
+    ]
     mapboxgl.accessToken = mapboxAPI_key;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -20,12 +20,27 @@
         center: [-98.4916, 29.4252],
         zoom: 13,// starting zoom
     });
+
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
         accessToken: mapboxgl.accessToken, // Set the access token
         mapboxgl: mapboxgl, // Set the mapbox-gl instance
-        marker: false // Do not use the default marker style
+        marker: true // Do not use the default marker style
     });
+    geocoder.on('result', (event) => {
+        var userInput = event.result.place_name;
+        var location =
+            {
+                name : userInput,
+                address : userInput
+        }
+
+        restaurants.push(location);
+        for (var i = 0; i < restaurants.length; i++)
+        placeMarkerAndPopup(restaurants[i], mapboxAPI_key, map);
+    });
+
+// Add the geocoder to the map
     map.addControl(geocoder);
 
     function placeMarkerAndPopup(info, token, map) {
@@ -33,7 +48,7 @@
             var marker = new mapboxgl.Marker()
                 .setLngLat(coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                        .setHTML(info.name)
+                    .setHTML(info.name)
                 )
                 .addTo(map)
         });
