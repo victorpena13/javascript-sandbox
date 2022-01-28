@@ -34,7 +34,21 @@
 
     restaurants.forEach(function (restaurant){
         placeMarkerAndPopup(restaurant, mapboxAPI_key, map);
-    })
+    });
+
+    function zoomFive() {
+        map.setZoom(5);
+    }
+    function zoomFifthteen() {
+        map.setZoom(15);
+    }
+    function zoomTwenty() {
+        map.setZoom(20);
+    }
+    $('#zoom-five').click(zoomFive);
+    $('#zoom-fifthteen').click(zoomFifthteen);
+    $('#zoom-twenty').click(zoomTwenty);
+
 }) ();
 
 
