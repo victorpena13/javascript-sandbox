@@ -1,21 +1,19 @@
 (function (){
-    mapboxgl.accessToken = mapboxAPI_key;
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4916, 29.4252], // starting position [lng, lat]
-        zoom: 13,// starting zoom
-    });
-
-    var popup = new mapboxgl.Popup()
-        .setLngLat([-98.4921628, 29.4800839])
-        .addTo(map)
-        .setHTML('<h3>sabor</h3>');
-
-    geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxAPI_key).then(function(result) {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(20);
+    geocode("4331 McCullough Ave, San Antonio, TX 78212", mapboxAPI_key).then(function(result) {
+        var x = parseFloat(result[0]);
+        var y = parseFloat(result[1]);
+        console.log(x + " " + y);
+        mapboxgl.accessToken = mapboxAPI_key;
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [x,y], // starting position [lng, lat]
+            zoom: 20,// starting zoom
+        });
+        var saborPopup = new mapboxgl.Popup()
+            .setLngLat([x,y])
+            .setHTML("sabor")
+            .addTo(map);
     });
 }) ();
 
