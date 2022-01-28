@@ -8,12 +8,17 @@
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
             center: [x,y], // starting position [lng, lat]
-            zoom: 20,// starting zoom
+            zoom: 18,// starting zoom
         });
-        var saborPopup = new mapboxgl.Popup()
+        var saborMarker = new mapboxgl.Marker()
             .setLngLat([x,y])
-            .setHTML("sabor")
+            .setPopup(
+                new mapboxgl.Popup({ offset: 25 }) // add popups
+                    .setHTML(`sabor`)
+            )
             .addTo(map);
+
+
     });
 }) ();
 
