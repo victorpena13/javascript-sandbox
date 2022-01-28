@@ -31,7 +31,10 @@
                 .addTo(map)
         });
     }
-    placeMarkerAndPopup(restaurants[0], mapboxAPI_key, map);
+
+    restaurants.forEach(function (restaurant){
+        placeMarkerAndPopup(restaurant, mapboxAPI_key, map);
+    })
 }) ();
 
 
