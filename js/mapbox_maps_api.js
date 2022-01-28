@@ -43,6 +43,7 @@
 // Add the geocoder to the map
     map.addControl(geocoder);
 
+    var currentmarkers = [];
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function(coordinates) {
             var marker = new mapboxgl.Marker()
@@ -51,6 +52,7 @@
                     .setHTML(info.name)
                 )
                 .addTo(map)
+            currentmarkers.push(marker);
         });
     }
 
@@ -58,6 +60,12 @@
         placeMarkerAndPopup(restaurant, mapboxAPI_key, map);
     });
 
+    function hideMarkers() {
+        for (var i = currentmarkers.length - 1; i >= 0; i--) {
+            currentmarkers[i].remove();
+        }
+    }
+    $('#hide-markers').click(hideMarkers);
     function zoomFive() {
         map.setZoom(5);
     }
@@ -70,6 +78,7 @@
     $('#zoom-five').click(zoomFive);
     $('#zoom-fifthteen').click(zoomFifthteen);
     $('#zoom-twenty').click(zoomTwenty);
+
 
 }) ();
 
