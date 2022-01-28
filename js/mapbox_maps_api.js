@@ -17,8 +17,6 @@
                     .setHTML(`sabor`)
             )
             .addTo(map);
-
-
     });
 }) ();
 
