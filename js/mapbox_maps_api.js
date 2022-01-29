@@ -20,6 +20,7 @@
         center: [-98.4916, 29.4252],
         zoom: 13,// starting zoom
     });
+
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
         accessToken: mapboxgl.accessToken, // Set the access token
@@ -44,6 +45,7 @@
     map.addControl(geocoder);
 
     var currentmarkers = [];
+
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function(coordinates) {
             var marker = new mapboxgl.Marker()
@@ -78,7 +80,6 @@
     $('#zoom-five').click(zoomFive);
     $('#zoom-fifthteen').click(zoomFifthteen);
     $('#zoom-twenty').click(zoomTwenty);
-
 
 }) ();
 
