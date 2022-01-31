@@ -31,6 +31,7 @@
         var lon = userInput[0];
         var lat = userInput[1];
 
+        var weatherPatterns = [];
         // Open Weather Map API:
         $.get("http://api.openweathermap.org/data/2.5/weather", {
             APPID: openWeatherAPI_key,
@@ -38,11 +39,10 @@
             lon:   lon,
             units: "imperial"
         }).done(function (data){
-            var coordinates = data.coord;
-            console.log(coordinates);
+            var weatherData = data.weather[0].description;
+            console.log(weatherData)
+
+
         });
-
     });
-
-
 }) ();
