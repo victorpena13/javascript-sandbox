@@ -82,10 +82,6 @@
     $('#zoom-fifthteen').click(zoomFifthteen);
     $('#zoom-twenty').click(zoomTwenty);
 
-
-
-
-
 }) ();
 
 

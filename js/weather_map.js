@@ -1,4 +1,6 @@
 (function (){
+
+    // MapBox API:
     mapboxgl.accessToken = mapboxAPI_key;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -24,6 +26,9 @@
         marker: true // Do not use the default marker style
     });
 
+    map.addControl(geocoder);
+
+    //Open Weather API:
     $.get("http://api.openweathermap.org/data/2.5/weather", {
         APPID: openWeatherAPI_key,
         q:     "San Antonio, US",
