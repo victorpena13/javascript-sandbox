@@ -21,6 +21,7 @@
         zoom: 13,// starting zoom
     });
 
+
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
         accessToken: mapboxgl.accessToken, // Set the access token
@@ -80,6 +81,10 @@
     $('#zoom-five').click(zoomFive);
     $('#zoom-fifthteen').click(zoomFifthteen);
     $('#zoom-twenty').click(zoomTwenty);
+
+
+
+
 
 }) ();
 
