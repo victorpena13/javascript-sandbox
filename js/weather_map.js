@@ -25,15 +25,24 @@
         mapboxgl: mapboxgl, // Set the mapbox-gl instance
         marker: true // Do not use the default marker style
     });
-
     map.addControl(geocoder);
+    geocoder.on('result', (event) => {
+        var userInput = event.result.center;
+        var lon = userInput[0];
+        var lat = userInput[1];
 
-    //Open Weather API:
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID: openWeatherAPI_key,
-        q:     "San Antonio, US",
-        units: "imperial"
-    }).done(function (data){
-        console.log(data);
+        // Open Weather Map API:
+        $.get("http://api.openweathermap.org/data/2.5/weather", {
+            APPID: openWeatherAPI_key,
+            lat:    lat,
+            lon:   lon,
+            units: "imperial"
+        }).done(function (data){
+            var coordinates = data.coord;
+            console.log(coordinates);
+        });
+
     });
+
+
 }) ();
