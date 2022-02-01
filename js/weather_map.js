@@ -9,6 +9,18 @@
     });
 
     map.on('click', (e) => {
+        var lng = e.lngLat.lng;
+        var lat = e.lngLat.lat;
+        $.get("http://api.openweathermap.org/data/2.5/weather", {
+            APPID: openWeatherAPI_key,
+            lat: lat,
+            lon: lng,
+            units: "imperial"
+        }).done(function (data){
+            var weatherData = data.weather[0].description;
+            $('#weather-conditions').html(weatherData);
+        });
+
         document.getElementById('info').innerHTML =
 // `e.point` is the x, y coordinates of the `mousemove` event
 // relative to the top-left corner of the map.
@@ -24,21 +36,23 @@
         mapboxgl: mapboxgl, // Set the mapbox-gl instance
         marker: true // Do not use the default marker style
     });
+
     map.addControl(geocoder);
     geocoder.on('result', (event) => {
         var userInput = event.result.center;
         var lon = userInput[0];
         var lat = userInput[1];
 
-        // Open Weather Map API:
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
-            APPID: openWeatherAPI_key,
-            lat:    lat,
-            lon:   lon,
-            units: "imperial"
-        }).done(function (data){
-            var weatherData = data.weather[0].description;
-            $('#weather-conditions').html(weatherData);
-        });
+            $.get("http://api.openweathermap.org/data/2.5/weather", {
+                APPID: openWeatherAPI_key,
+                lat: lat,
+                lon: lon,
+                units: "imperial"
+            }).done(function (data){
+                var weatherData = data.weather[0].description;
+                $('#weather-conditions').html(weatherData);
+            });
+
+
     });
 }) ();
