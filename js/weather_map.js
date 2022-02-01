@@ -8,6 +8,7 @@
         zoom: 13,// starting zoom
     });
 
+    //search through clicking on the map
     map.on('click', (e) => {
         var lng = e.lngLat.lng;
         var lat = e.lngLat.lat;
@@ -31,19 +32,18 @@
             JSON.stringify(e.lngLat.wrap());
     });
 
+    //searchBar:
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
         accessToken: mapboxgl.accessToken, // Set the access token
         mapboxgl: mapboxgl, // Set the mapbox-gl instance
         marker: true // Do not use the default marker style
     });
-
     map.addControl(geocoder);
     geocoder.on('result', (event) => {
         var userInput = event.result.center;
         var lon = userInput[0];
         var lat = userInput[1];
-
             $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: openWeatherAPI_key,
                 lat: lat,
@@ -55,7 +55,5 @@
                 var weatherData = data.weather[0].description;
                 $('#weather-conditions').html(weatherData);
             });
-
-
     });
 }) ();
