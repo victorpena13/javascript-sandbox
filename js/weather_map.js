@@ -1,5 +1,4 @@
 (function (){
-
     // MapBox API:
     mapboxgl.accessToken = mapboxAPI_key;
     const map = new mapboxgl.Map({
@@ -31,7 +30,6 @@
         var lon = userInput[0];
         var lat = userInput[1];
 
-        var weatherPatterns = [];
         // Open Weather Map API:
         $.get("http://api.openweathermap.org/data/2.5/weather", {
             APPID: openWeatherAPI_key,
@@ -40,9 +38,7 @@
             units: "imperial"
         }).done(function (data){
             var weatherData = data.weather[0].description;
-            console.log(weatherData)
-
-
+            $('#weather-conditions').html(weatherData);
         });
     });
 }) ();
