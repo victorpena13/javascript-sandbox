@@ -17,6 +17,7 @@
             lon: lng,
             units: "imperial"
         }).done(function (data){
+            console.log(data);
             var weatherData = data.weather[0].description;
             $('#weather-conditions').html(weatherData);
         });
@@ -43,12 +44,14 @@
         var lon = userInput[0];
         var lat = userInput[1];
 
-            $.get("http://api.openweathermap.org/data/2.5/weather", {
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: openWeatherAPI_key,
                 lat: lat,
                 lon: lon,
+                cnt: 5,
                 units: "imperial"
             }).done(function (data){
+                console.log(data);
                 var weatherData = data.weather[0].description;
                 $('#weather-conditions').html(weatherData);
             });
