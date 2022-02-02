@@ -44,16 +44,19 @@
         var userInput = event.result.center;
         var lon = userInput[0];
         var lat = userInput[1];
-            $.get("http://api.openweathermap.org/data/2.5/forecast", {
-                APPID: openWeatherAPI_key,
-                lat: lat,
-                lon: lon,
-                cnt: 5,
-                units: "imperial"
-            }).done(function (data){
-                console.log(data);
-                var weatherData = data.weather[0].description;
-                $('#weather-conditions').html(weatherData);
-            });
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: openWeatherAPI_key,
+            lat: lat,
+            lon: lon,
+            cnt: 5,
+            units: "imperial"
+        }).done(function (data){
+            var fiveDayForecast = data.list;
+            var html = '';
+            for(var i = 0; i < fiveDayForecast.length; i++) {
+                html += fiveDayForecast[i].main.temp + '\n';
+            }
+            $('#weather-conditions').html(html);
+        });
     });
 }) ();
