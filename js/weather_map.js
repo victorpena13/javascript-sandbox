@@ -22,7 +22,6 @@
             var weatherData = data.weather[0].description;
             $('#weather-conditions').html(weatherData);
         });
-
         document.getElementById('info').innerHTML =
 // `e.point` is the x, y coordinates of the `mousemove` event
 // relative to the top-left corner of the map.
@@ -48,15 +47,19 @@
             APPID: openWeatherAPI_key,
             lat: lat,
             lon: lon,
+            //cnt sets the number of forecast the api call will deliver
             cnt: 5,
             units: "imperial"
         }).done(function (data){
             var fiveDayForecast = data.list;
-            var html = '';
+            console.log(fiveDayForecast);
+            htmlString = '';
             for(var i = 0; i < fiveDayForecast.length; i++) {
-                html += fiveDayForecast[i].main.temp + '\n';
+                htmlString += '<div class="col">' + fiveDayForecast[i].main.temp + '</div>';
             }
-            $('#weather-conditions').html(html);
+            $('.row').html(htmlString);
         });
     });
 }) ();
+
+
