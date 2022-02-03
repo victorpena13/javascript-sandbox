@@ -8,6 +8,7 @@
         zoom: 13,// starting zoom
     });
 
+    htmlString = '';
     //search through clicking on the map
     map.on('click', (e) => {
         var lng = e.lngLat.lng;
@@ -20,7 +21,7 @@
         }).done(function (data){
             console.log(data);
             var weatherData = data.weather[0].description;
-            $('#weather-conditions').html(weatherData);
+            $('.row').html(weatherData);
         });
         document.getElementById('info').innerHTML =
 // `e.point` is the x, y coordinates of the `mousemove` event
@@ -30,7 +31,6 @@
             // `e.lngLat` is the longitude, latitude geographical position of the event.
             JSON.stringify(e.lngLat.wrap());
     });
-
     //searchBar:
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
@@ -50,13 +50,18 @@
             units: "imperial",
         }).done(function (data){
             var fiveDayForecast = data.daily;
-            console.log(fiveDayForecast);
-            htmlString = '';
-            for(var i = 0; i < fiveDayForecast.length; i++) {
-                htmlString += '<div class="col">' + new Date(fiveDayForecast[i].dt * 1000) + '\n' + fiveDayForecast[i].temp.morn + '</div>';
+            htmlString += '<h6>7 Day Forecast</h6>';
+            for(var i = 0; i < 7; i++) {
+                var icon = 'http://openweathermap.org/img/wn/' + fiveDayForecast[i].weather[0].icon + '@2x.png';
+                $('.icon').html(icon);
+                htmlString += '<div class="col">' + new Date(fiveDayForecast[i].dt * 1000) +
+                    '</br>' + fiveDayForecast[i].temp.morn +
+                    '</br>' + fiveDayForecast[i].weather[0].icon +
+                    '</br>'  +
+                    '</div>';
             }
             $('.row').html(htmlString);
         });
     });
-    new Date(1504095567183).toLocaleDateString("en-US")
 }) ();
+
