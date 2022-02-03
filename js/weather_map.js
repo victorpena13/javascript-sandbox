@@ -53,9 +53,10 @@
             console.log(fiveDayForecast);
             htmlString = '';
             for(var i = 0; i < fiveDayForecast.length; i++) {
-                htmlString += '<div class="col">' + fiveDayForecast[i].dt + '\n' + fiveDayForecast[i].temp.morn + '</div>';
+                htmlString += '<div class="col">' + new Date(fiveDayForecast[i].dt * 1000) + '\n' + fiveDayForecast[i].temp.morn + '</div>';
             }
             $('.row').html(htmlString);
         });
     });
+    new Date(1504095567183).toLocaleDateString("en-US")
 }) ();
