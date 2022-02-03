@@ -14,8 +14,6 @@ searchBar.addEventListener('keyup', (e) => {
     buildTable(data)
 });
 
-
-
 buildTable(myArray)
 
 function searchTable(val, data){
@@ -32,14 +30,11 @@ function searchTable(val, data){
     return filteredData
 }
 
-
 $('th').on('click', function(){
     var column = $(this).data('colname')
     var order = $(this).data('order')
     var text = $(this).html()
     text = text.substring(0, text.length - 1);
-
-
 
     if (order == 'desc'){
         myArray = myArray.sort((a, b) => a[column] > b[column] ? 1 : -1)
@@ -50,14 +45,9 @@ $('th').on('click', function(){
         $(this).data("order","desc");
         text += '&#9650'
     }
-
     $(this).html(text)
     buildTable(myArray)
 })
-
-
-
-
 
 function buildTable(data){
     var table = document.getElementById('myTable')

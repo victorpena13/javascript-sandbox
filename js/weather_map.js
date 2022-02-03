@@ -43,23 +43,19 @@
         var userInput = event.result.center;
         var lon = userInput[0];
         var lat = userInput[1];
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
             APPID: openWeatherAPI_key,
             lat: lat,
             lon: lon,
-            //cnt sets the number of forecast the api call will deliver
-            cnt: 5,
-            units: "imperial"
+            units: "imperial",
         }).done(function (data){
-            var fiveDayForecast = data.list;
+            var fiveDayForecast = data.daily;
             console.log(fiveDayForecast);
             htmlString = '';
             for(var i = 0; i < fiveDayForecast.length; i++) {
-                htmlString += '<div class="col">' + fiveDayForecast[i].main.temp + '</div>';
+                htmlString += '<div class="col">' + fiveDayForecast[i].dt + '\n' + fiveDayForecast[i].temp.morn + '</div>';
             }
             $('.row').html(htmlString);
         });
     });
 }) ();
-
-
