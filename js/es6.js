@@ -42,10 +42,11 @@ const languages = ['HTML', 'CSS', 'JavaScript', ',jQuery'];
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
-  name: name,
-  email: email,
-  languages: languages
+  name,
+  email,
+  languages
 });
+
 
 // TODO: replace `var` with `let` in the following variable declarations
 var emails = [];
