@@ -52,18 +52,15 @@
         }).done(function (data){
             var fiveDayForecast = data.daily;
             console.log(fiveDayForecast)
-
             for(var i = 0; i < 7; i++) {
-                var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'";
+                var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
                 iconList.push(icon);
-                htmlString += '<div class="col">' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
-                htmlString += '<div class="col">' + fiveDayForecast[i].temp.morn + '</div>';
-                htmlString += '<div class="col">' + iconList[i] + '</div>';
+                htmlString += '<div class="col">' + iconList[i] +
+                    '<br>' + 'temp morn: ' + fiveDayForecast[i].temp.morn +
+                    '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
             }
             $('.row').html(htmlString);
-
         });
     });
 }) ();
 
-// data.daily[0].weather[0].icon
