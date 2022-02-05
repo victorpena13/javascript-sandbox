@@ -28,18 +28,15 @@ const users = [
     languages: ['html', 'css', 'javascript', 'php']
   }
 ];
-
 // TODO: fill in your name and email and add some programming languages you know
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
 const name = 'victor pena';
 const email = '13victor.pena@gmail.com';
-const languages = ['HTML', 'CSS', 'JavaScript', ',jQuery'];
-
+const languages = ['html', 'css', 'javascript'];
 // cannot manipulate a const array. its value is tied to its initial declaration.
 //     languages += ;
-
 // TODO: rewrite the object literal using object property shorthand
 users.push({
   name,
@@ -47,43 +44,46 @@ users.push({
   languages
 });
 
-
+console.log(users);
 
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
-  return emails.push(user.email);
-});
+//orignal
+// users.forEach(function(user) {
+//   return emails.push(user.email);
+// });
 
-users.forEach((user) => {
-  return emails.push(user.email);
-});
+//refactored
+users.forEach(user => emails.push(user.email));
 
-users.forEach(function(user) {
-  return names.push(user.name);
-});
+// original
+// users.forEach(function(user) {
+//   return names.push(user.name);
+// });
 
-users.forEach((user) => {
-  return names.push(user.name);
-})
+// refactored
+users.forEach(user => names.push(user.name));
 
 // TODO: replace `var` with `let` in the following declaration
-var developers = [];
-users.forEach(function(user) {
+let developers = [];
+users.forEach(user => {
   // TODO: rewrite the code below to use object destructuring assignment
   //       note that you can also use destructuring assignment in the function
   //       parameter definition
-  const name = user.name;
-  const email = user.email;
-  const languages = user.languages;
+
+  const {name, email, languages} = user;
+  // const name = user.name;
+  // const email = user.email;
+  // const languages = user.languages;
 
   // TODO: rewrite the assignment below to use template strings
-  developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+  developers.push('${name}s email is ${email}, ${name} knows ${languages.join(', ')}');
 });
 
+console.log(developers);
 // TODO: Use `let` for the following variable
 var list = '<ul>';
 

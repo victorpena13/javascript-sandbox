@@ -8,7 +8,8 @@
         zoom: 13,// starting zoom
     });
 
-    htmlString = '';
+    var htmlString = '';
+    var iconList = [];
     //search through clicking on the map
     map.on('click', (e) => {
         var lng = e.lngLat.lng;
@@ -50,17 +51,21 @@
             units: "imperial",
         }).done(function (data){
             var fiveDayForecast = data.daily;
+            console.log(fiveDayForecast)
             htmlString += '<h6>7 Day Forecast</h6>';
+
             for(var i = 0; i < 7; i++) {
-                var icon = 'http://openweathermap.org/img/wn/' + fiveDayForecast[i].weather[0].icon + '@2x.png';
-                $('.icon').html(icon);
+                var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'";
+                iconList.push(icon);
+                const iconLocation = document.createElement("img");
                 htmlString += '<div class="col">' + new Date(fiveDayForecast[i].dt * 1000) +
                     '</br>' + fiveDayForecast[i].temp.morn +
                     '</br>' + fiveDayForecast[i].weather[0].icon +
-                    '</br>'  +
+                    '</br>'  + iconList[i] +
                     '</div>';
             }
             $('.row').html(htmlString);
+
         });
     });
 }) ();

@@ -5,7 +5,7 @@
 }
 
 body { margin: 0; padding: 0; }
-#map { top: 0; bottom: 0; width: 100%; }
+#map { top: 0; bottom: 0; width: 90%; }
 
 #info {
     display: table;
