@@ -8,8 +8,10 @@
         zoom: 13,// starting zoom
     });
 
+
     var htmlString = '';
     var iconList = [];
+
     //search through clicking on the map
     map.on('click', (e) => {
         var lng = e.lngLat.lng;
@@ -52,7 +54,7 @@
         }).done(function (data){
             var fiveDayForecast = data.daily;
             console.log(fiveDayForecast)
-            for(var i = 0; i < 7; i++) {
+            for(var i = 0; i < 5; i++) {
                 var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
                 iconList.push(icon);
                 htmlString += '<div class="col">' + iconList[i] +
