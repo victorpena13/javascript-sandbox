@@ -53,7 +53,7 @@
     });
     map.addControl(geocoder);
     geocoder.on('result', (event) => {
-        console.log(event.result.place_name);
+        var locationName =event.result.place_name
         var coordinates = event.result.center;
         var lon = coordinates[0];
         var lat = coordinates[1];
@@ -61,7 +61,7 @@
         var marker = new mapboxgl.Marker()
             .setLngLat(coordinates)
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                // .setHTML(info.name)
+                .setHTML(locationName)
             )
             .addTo(map)
     });
