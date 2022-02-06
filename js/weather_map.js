@@ -8,20 +8,19 @@
         zoom: 13,// starting zoom
     });
 
-    //search through clicking on the map
-    map.on('click', (e) => {
+
+    function getWeather(latitude, longitude, APIkey) {
         var htmlString = '';
         var iconList = [];
-        var lng = e.lngLat.lng;
-        var lat = e.lngLat.lat;
-        $.get("http://api.openweathermap.org/data/2.5/onecall", {
-            APPID: openWeatherAPI_key,
-            lat: lat,
-            lon: lng,
-            units: "imperial"
-        }).done(function (data){
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
+            APPID: APIkey,
+            lat: latitude,
+            lon: longitude,
+            units: "imperial",
+        }).done(function (data) {
             var fiveDayForecast = data.daily;
-            for(var i = 0; i < 7; i++) {
+            htmlString += '<h6>5 Day Forecast</h6>';
+            for (var i = 0; i < 5; i++) {
                 var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
                 iconList.push(icon);
                 htmlString += '<div class="col">' + iconList[i] +
@@ -29,11 +28,15 @@
                     '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
             }
             $('.row').html(htmlString);
-
-            // console.log(data);
-            // var weatherData = data.weather[0].description;
-            // $('.row').html(weatherData);
         });
+    }
+
+
+    //search through clicking on the map
+    map.on('click', (e) => {
+        var lng = e.lngLat.lng;
+        var lat = e.lngLat.lat;
+        getWeather(lat, lng, openWeatherAPI_key);
         document.getElementById('info').innerHTML =
 // `e.point` is the x, y coordinates of the `mousemove` event
 // relative to the top-left corner of the map.
@@ -42,6 +45,8 @@
             // `e.lngLat` is the longitude, latitude geographical position of the event.
             JSON.stringify(e.lngLat.wrap());
     });
+
+
     //searchBar:
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
@@ -51,28 +56,10 @@
     });
     map.addControl(geocoder);
     geocoder.on('result', (event) => {
-        var htmlString = '';
-        var iconList = [];
-        var userInput = event.result.center;
-        var lon = userInput[0];
-        var lat = userInput[1];
-        $.get("http://api.openweathermap.org/data/2.5/onecall", {
-            APPID: openWeatherAPI_key,
-            lat: lat,
-            lon: lon,
-            units: "imperial",
-        }).done(function (data){
-            var fiveDayForecast = data.daily;
-            console.log(fiveDayForecast)
-            for(var i = 0; i < 7; i++) {
-                var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
-                iconList.push(icon);
-                htmlString += '<div class="col">' + iconList[i] +
-                    '<br>' + 'temp morn: ' + fiveDayForecast[i].temp.morn +
-                    '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
-            }
-            $('.row').html(htmlString);
-        });
+        var coordinates = event.result.center;
+        var lon = coordinates[0];
+        var lat = coordinates[1];
+        getWeather(lat, lon, openWeatherAPI_key);
     });
 }) ();
 
