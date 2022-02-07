@@ -78,6 +78,15 @@ const persona = {
 }
 
 //object destructing
-
-
 //old way
+var personX = {name: 'victor', age: 30};
+var nameX= person.name;
+var ageX = person.age;
+console.log(nameX)
+console.log(ageX);
+
+//new way
+
+const personY = {name: 'javier', age: 30};
+const {nameY, ageY} = person;
+console.log(nameY, ageY);
