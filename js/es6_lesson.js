@@ -25,4 +25,13 @@ console.log(`Hello, ${name}!`);
 console.log(`Hello, ${name.toUpperCase()}`);
 console.log(`Hello, ${name.toUpperCase()}!`); // Hello, CODEUP!
 
+//arrow functions
+
+const oldWay =  function (name) {
+    return 'hello, ' + name + '!';
+}
+
+const newWay = (name) => `Hello, ${name}!`;
+//parenthesis can be omitted if their is only one argument
+
 
