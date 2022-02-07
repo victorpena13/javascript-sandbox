@@ -53,7 +53,7 @@
     });
     map.addControl(geocoder);
     geocoder.on('result', (event) => {
-        var locationName =event.result.place_name
+        var locationName = event.result.place_name
         var coordinates = event.result.center;
         var lon = coordinates[0];
         var lat = coordinates[1];
