@@ -32,3 +32,33 @@ const sum = numbers.reduce((accumulation, currentNumber) => {
     return accumulation + currentNumber;
 }, 0);
 console.log(sum);
+
+const salesPeople = [
+    {name: 'Jim Halpert', sales: 100},
+    {name: 'Dwight Schrute', sales: 50},
+    {name: 'Andy Bernard', sales: 150},
+];
+
+const totalSales = salesPeople.reduce((total, person) => {
+    return total + person.sales;
+},0);
+
+console.log(totalSales);
+
+function countWords(sentence) {
+    const words = sentence.split(' ');
+    const wordCountObject = words.reduce((wordCounts, word) => {
+        if (typeof wordCounts[word] === 'undefined') {
+            //each word will have one if there is more then go to else
+            wordCounts[word] = 1;
+        } else {
+            //increment the existing count
+            wordCounts[word] += 1;
+        }
+        return wordCounts;
+    }, {});// start with an empty object
+    return wordCountObject;
+}
+
+console.log(countWords('Mary had a little lamb little lamb little lamb'));;
+
