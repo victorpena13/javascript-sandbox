@@ -11,10 +11,24 @@ for (var i = 0; i < numbers.length; i += 1) {
 }
 console.log(evens);
 
-//for. filter if the callback returns true the element will be in the new collection,
+//for .filter if the callback returns true the element will be in the new collection,
 // if it returns false, the element will not be part of the new collection.
 var evenNumbers = numbers.filter(function (n){
    return n % 2 === 0;
 });
 
 console.log(evenNumbers);
+
+//for .map the return value of the callback will be the new value of the element.
+var incremented = numbers.map(n => n+1);
+console.log(incremented);
+
+//reduce
+//.reduce is used to reduce a collection to a single value. most commonly, we will use to transform
+//a collection into a primitive value:
+
+const numbersOneThroughFive = [1,2,3,4,5];
+const sum = numbers.reduce((accumulation, currentNumber) => {
+    return accumulation + currentNumber;
+}, 0);
+console.log(sum);
