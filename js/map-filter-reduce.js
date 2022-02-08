@@ -55,9 +55,22 @@ const averageYears = users.reduce((total, user) => {
 }, 0)
 console.log(averageYears);
 
-
 // Use .reduce to get the longest email from the list of users.
 
+function longestEmail() {
+    let emailList = []
+    const EmailReduce = users.reduce((total, user) =>{
+        var total =total;
+        var userEmail =user.email;
+        var email_Length  = user.email.split('').length;
+        emailList.push(email_Length + ' ' + userEmail);
+    }, {});
+    let sortedEmailList = emailList.sort();
+    let longestEmail = emailList.pop();
+    console.log(longestEmail);
+    return longestEmail;
+}
+longestEmail()
 
 // Use .reduce to get the list of user's names in a single string. Example:
 // Your instructors are: ryan, luis, zach, fernando, justin.
