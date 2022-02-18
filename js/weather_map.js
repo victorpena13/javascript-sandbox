@@ -24,6 +24,7 @@
                 iconList.push(icon);
                 htmlString += '<div class="col">' + iconList[i] +
                     '<br>' + 'temp morn: ' + fiveDayForecast[i].temp.morn +
+                    '<br>' + 'temp day: ' + fiveDayForecast[i].temp.day +
                     '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
             }
             $('.row').html(htmlString);
