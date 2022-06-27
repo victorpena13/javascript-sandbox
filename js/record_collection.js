@@ -23,13 +23,13 @@ function updateRecords(records, id, prop, value) {
     if(records[id].hasOwnProperty(prop)){
         records[id].prop = value;
     }
-    if(recoreds[id].hasOwnProperty(prop) == false) {
+    if(records[id].hasOwnProperty(prop) === false) {
         records[id][prop] = value;
     }
     return records;
 }
 
-updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+console.log(updateRecords(recordCollection, 5439, 'artist', 'ABBA'));
 
 //this is a test
 //another test
