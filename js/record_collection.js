@@ -22,21 +22,20 @@ const recordCollection = {
 function updateRecords(records, id, prop, value) {
     if(records[id].hasOwnProperty(prop)){
         records[id].prop = value;
-    }
-    if(records[id].hasOwnProperty(prop) === false) {
+    } else if(records[id].hasOwnProperty(prop) === false) {
         records[id][prop] = value;
-    }
-    if(prop === "tracks" && records[id].hasOwnProperty(prop)){
+    } else if(prop === "tracks" && records[id].hasOwnProperty(prop)){
         records[id].tracks.push(value);
-    }
-
-    if(records[id].hasOwnProperty("prop")) {
+    } else if(records[id].hasOwnProperty("prop")) {
+        delete records[id].prop;
+    } else if (value === "") {
         delete records[id].prop;
     }
     return records;
 }
 
 console.log(updateRecords(recordCollection, 5439, 'artist', 'ABBA'));
+console.log(updateRecords(recordCollection, 5439, 'tracks', 'Take a Chance on Me'))
 // console.log(updateRecords(recordCollection,1245,'tracks', 'Addicted to Love'));
 // console.log(updateRecords(recordCollection,1245,'tracks', 'Every Kinda People'));
 
