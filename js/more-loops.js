@@ -37,9 +37,7 @@ for(i = 0; i <= myArr.length; i++) {
     }
 }
 total = myArr[myArr.length-1];
-console.log('testing');
 console.log(total);
-console.log('test');
 
 
 //nesting for loops:
@@ -51,3 +49,27 @@ for(let i = 0; i < arr.length; i++) {
         console.log(arr[i][j]);
     }
 }
+
+function multiply(arr, n) {
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+        product *=arr[i];
+    }
+    return product;
+}
+
+console.log('test');
+console.log(multiply(myArr, 5));
+
+const testArray = [1,2,3,4,5];
+
+
+function sum(arr, n) {
+    let total = 0;
+ for(i = 0; i <=n; i++) {
+    total = sum(arr, n + arr[i]);
+ }
+ return total;
+}
+
+console.log(sum(testArray, 5));
