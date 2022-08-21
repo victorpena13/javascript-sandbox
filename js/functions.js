@@ -113,3 +113,11 @@ alert(calculateTip(userTip,userTotal));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(discount, total) {
+    var conversion = parseFloat(discount)/100;
+    return total - (total * conversion);
+}
+var dscnt = prompt("enter discount percentage: ");
+var price = prompt("enter price: ");
+alert(applyDiscount(dscnt, price));
