@@ -1,33 +1,42 @@
-console.log(parseInt("42"));
+(function () {
+    var myString = "42";
 
-var myString = "13";
+    var result = parseInt(myString);
+    console.log(result);
 
-var myNumber = parseInt(myString);
-console.log(myNumber);
+    function sumOfTwo(x,y) {
+        var output = x + y;
+        return output;
+    }
 
-function plusFive(x) {
-    return x + 5;
-}
+    var two = sumOfTwo(1,1);
+    var three = sumOfTwo(1,2);
+    var four = sumOfTwo(2,2);
+    console.log(two);
+    console.log(three);
+    console.log(four);
 
-var result = plusFive(4);
-console.log(result);
-var resultThree = plusFive(3);
-console.log(resultThree);
+    function increment(x) {
+        return x + 1;
+    }
 
-function cap(string) {
-    var output = string.toUpperCase();
-    return output;
-}
-var capString = cap("eat this");
-console.log(capString);
+    console.log("increment function:");
+    var five = increment(increment(increment(two)));
+    console.log(five);
+    var addTwoVars = sumOfTwo(increment(two),five);
+    console.log(addTwoVars);
 
-console.log(cap("capital"));
+    function shout(message) {
+        alert(message.toUpperCase() + "!!!");
+    }
+    shout("scream & shout");
 
-function increment(x) {
-    return x + 1;
-}
+    function sayHello(name) {
+        var two = 3;
+        console.log(sumOfTwo(two, five));
+        var result = name;
+        return "Hello, " + result;
+    }
+    shout(sayHello('victor'));
+})();
 
-var four = increment(3);
-console.log(four);
-var five = increment(4);
-console.log(five);
