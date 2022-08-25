@@ -45,6 +45,7 @@ function analyzeColor(color) {
     }
 }
 analyzeColor('cyan');
+analyzeColor(3);
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -75,7 +76,25 @@ function analyzeColorSwitch(color) {
             alert("lipstick " + color);
             break;
         case "yellow":
-            alert("sunshine " + color)
+            alert("sunshine " + color);
+            break;
+        case "green":
+            alert(color + "bean");
+            break;
+        case "violet":
+            alert(color + " bent backwards");
+            break;
+        case "orange":
+            alert("agent " + orange);
+            break;
+        case "indigo":
+            alert(color + ". idk");
+            break;
+        case isNaN(color) === false:
+            alert(color + " 3 is not a number");
+            break;
+        default :
+            alert(color + " thats not my fav color. but i like it for you.");
     }
 }
 /**
@@ -84,6 +103,8 @@ function analyzeColorSwitch(color) {
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var userInput = prompt('enter your favorite color: ');
 
 /* ########################################################################## */
 
