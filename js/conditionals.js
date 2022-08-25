@@ -38,6 +38,8 @@ function analyzeColor(color) {
         alert("like the sun!");
     } else if (color === "indigo") {
         alert("I like indigo");
+    } else if (isNaN(color) === false) {
+        alert("hey that's not a color");
     } else {
         alert(color + ", that is not my favorite, but I like it for you!");
     }
@@ -64,6 +66,13 @@ analyzeColor(randomColor);
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
+function analyzeColorSwitch(color) {
+    switch(color) {
+        case "blue" :
+            alert("what a coincidence, that's my fav color");
+            break;
+    }
+}
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
