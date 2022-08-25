@@ -68,9 +68,14 @@ analyzeColor(randomColor);
 
 function analyzeColorSwitch(color) {
     switch(color) {
-        case "blue" :
+        case "blue":
             alert("what a coincidence, that's my fav color");
             break;
+        case "red":
+            alert("lipstick " + color);
+            break;
+        case "yellow":
+            alert("sunshine " + color)
     }
 }
 /**
