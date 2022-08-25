@@ -42,9 +42,7 @@ function analyzeColor(color) {
         alert(color + ", that is not my favorite, but I like it for you!");
     }
 }
-
 analyzeColor('cyan');
-
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -58,6 +56,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+
+analyzeColor(randomColor);
 
 /**
  * TODO:
