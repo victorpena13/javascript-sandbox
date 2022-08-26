@@ -94,7 +94,7 @@ function analyzeColorSwitch(color) {
             alert(color + " is not a number");
             break;
         default :
-            alert(color + " thats not my fav color. but i like it for you.");
+            alert(color + " that's not my fav color. but i like it for you.");
     }
 }
 /**
@@ -134,7 +134,8 @@ analyzeColorSwitch(userInput);
 function calculateTotal(luckyNumber, total) {
     switch(luckyNumber) {
         case 1 :
-            alert(total - (total * .10));
+            alert("your lucky number is: " + luckyNumber + ".\nyour price before the discount: " + total +
+                "\nyour amount with discount applied is: "+ (total - (total * .10)));
             break;
         case 2 :
             alert(total - (total * .25));
@@ -153,7 +154,6 @@ function calculateTotal(luckyNumber, total) {
             break;
     }
 }
-console.log(typeof rando);
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -163,7 +163,15 @@ console.log(typeof rando);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var userPrompt = parseInt(prompt("please enter total: "));
+
+console.log(typeof userPrompt);
+
+
+calculateTotal(1, 100);
+calculateTotal(2, 200);
 
 /**
  * TODO:
@@ -183,4 +191,13 @@ console.log(typeof rando);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+var yesNO = confirm("would you like to enter a number?");
+console.log(yesNO);
+
+if (yesNO === true) {
+    var userNumber = prompt("your number please: ");
+} else {
+    alert("signing off");
+}
 
