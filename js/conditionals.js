@@ -197,6 +197,19 @@ console.log(yesNO);
 
 if (yesNO === true) {
     var userNumber = prompt("your number please: ");
+    if(userNumber % 2 === 0 ) {
+        if(userNumber > 0) {
+            alert("your number " + userNumber + " is even\nyour number + 100 is: " + (userNumber+100) + "\nyour number " + userNumber + " is positive");
+        } else if (userNumber < 0) {
+            alert("your number " + userNumber + " is even\nyour number + 100 is: " + (userNumber+100) + "\nyour number " + userNumber + " is negative");
+        }
+    } else {
+        if(userNumber > 0) {
+            alert("your number " + userNumber + " is odd\nyour number + 100 is: " + (userNumber+100) + "\nyour number " + userNumber + " is positive");
+        } else if (userNumber < 0 ) {
+            alert("your number " + userNumber + " is odd\nyour number + 100 is: " + (userNumber+100) + "\nyour number " + userNumber + " is negative");
+        }
+    }
 } else {
     alert("signing off");
 }
