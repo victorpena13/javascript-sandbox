@@ -131,10 +131,6 @@ analyzeColorSwitch(userInput);
  * return value.
  */
 
-var rando = Math.floor(Math.random() * 6);
-console.log(rando);
-
-
 function calculateTotal(luckyNumber, total) {
     switch(luckyNumber) {
         case 1 :
@@ -158,7 +154,6 @@ function calculateTotal(luckyNumber, total) {
     }
 }
 console.log(typeof rando);
-// calculateTotal(parseInt(rando, 100));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
