@@ -39,7 +39,7 @@ function analyzeColor(color) {
     } else if (color === "indigo") {
         alert("I like indigo");
     } else if (isNaN(color) === false) {
-        alert("hey that's not a color");
+        alert(color + " hey that's not a color");
     } else {
         alert(color + ", that is not my favorite, but I like it for you!");
     }
@@ -91,7 +91,7 @@ function analyzeColorSwitch(color) {
             alert(color + ". idk");
             break;
         case isNaN(color) === false:
-            alert(color + " 3 is not a number");
+            alert(color + " is not a number");
             break;
         default :
             alert(color + " thats not my fav color. but i like it for you.");
@@ -105,6 +105,9 @@ function analyzeColorSwitch(color) {
  */
 
 var userInput = prompt('enter your favorite color: ');
+
+analyzeColorSwitch(userInput);
+
 
 /* ########################################################################## */
 
@@ -128,6 +131,34 @@ var userInput = prompt('enter your favorite color: ');
  * return value.
  */
 
+var rando = Math.floor(Math.random() * 6);
+console.log(rando);
+
+
+function calculateTotal(luckyNumber, total) {
+    switch(luckyNumber) {
+        case 1 :
+            alert(total - (total * .10));
+            break;
+        case 2 :
+            alert(total - (total * .25));
+            break;
+        case 3:
+            alert(total - (total * .35));
+            break;
+        case 4:
+            alert(total - (total * .50));
+            break;
+        case 5:
+            alert("free!");
+            break;
+        default:
+            alert(luckyNumber + " better luck next time");
+            break;
+    }
+}
+console.log(typeof rando);
+// calculateTotal(parseInt(rando, 100));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
