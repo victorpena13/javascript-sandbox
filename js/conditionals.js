@@ -172,6 +172,7 @@ console.log(typeof userPrompt);
 
 calculateTotal(1, 100);
 calculateTotal(2, 200);
+calculateTotal(luckyNumber, 100);
 
 /**
  * TODO:
